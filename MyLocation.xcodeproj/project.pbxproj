@@ -14,6 +14,8 @@
 		3EDFADCB1C63B2910075E10D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDFADC91C63B2910075E10D /* LaunchScreen.storyboard */; };
 		3EDFADD61C63B2910075E10D /* MyLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFADD51C63B2910075E10D /* MyLocationTests.swift */; };
 		3EDFADE11C63B2910075E10D /* MyLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFADE01C63B2910075E10D /* MyLocationUITests.swift */; };
+		3EDFADEF1C63B29E0075E10D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDFADEE1C63B29E0075E10D /* MapKit.framework */; };
+		3EDFADF11C63B2A90075E10D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDFADF01C63B2A90075E10D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3EDFADDC1C63B2910075E10D /* MyLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDFADE01C63B2910075E10D /* MyLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationUITests.swift; sourceTree = "<group>"; };
 		3EDFADE21C63B2910075E10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EDFADEE1C63B29E0075E10D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3EDFADF01C63B2A90075E10D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EDFADF11C63B2A90075E10D /* CoreLocation.framework in Frameworks */,
+				3EDFADEF1C63B29E0075E10D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		3EDFADB41C63B2910075E10D = {
 			isa = PBXGroup;
 			children = (
+				3EDFADF01C63B2A90075E10D /* CoreLocation.framework */,
+				3EDFADEE1C63B29E0075E10D /* MapKit.framework */,
 				3EDFADBF1C63B2910075E10D /* MyLocation */,
 				3EDFADD41C63B2910075E10D /* MyLocationTests */,
 				3EDFADDF1C63B2910075E10D /* MyLocationUITests */,

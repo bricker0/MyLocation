@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyLocation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" scrollEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5M-WM-bgn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="556" id="RjX-St-hoP"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3mH-Se-NiH"/>
+                                </connections>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXg-RU-eKv">
+                                <rect key="frame" x="5" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="1q2-sS-jSA">
+                                        <connections>
+                                            <action selector="clearPin:" destination="BYZ-38-t0r" id="D9g-nH-1xj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3Hf-KN-0b1"/>
+                                    <barButtonItem title="Remember Location" id="ftm-eO-che">
+                                        <connections>
+                                            <action selector="dropPin:" destination="BYZ-38-t0r" id="R5D-fM-Tt5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="k2Z-Sq-OsI"/>
+                                    <barButtonItem style="plain" id="OpL-6D-F2X">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="DIj-WB-5QB">
+                                            <rect key="frame" x="559" y="11" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="RXg-RU-eKv" secondAttribute="trailing" constant="-25" id="6Ni-dq-0Jx"/>
+                            <constraint firstItem="RXg-RU-eKv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-15" id="RUf-nz-jfs"/>
+                            <constraint firstItem="T5M-WM-bgn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="T4x-c8-k32"/>
+                            <constraint firstItem="T5M-WM-bgn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dJF-Lp-UfA"/>
+                            <constraint firstItem="T5M-WM-bgn" firstAttribute="bottom" secondItem="RXg-RU-eKv" secondAttribute="top" id="oAf-hb-uHM"/>
+                            <constraint firstAttribute="trailing" secondItem="T5M-WM-bgn" secondAttribute="trailing" id="u2N-zG-XPd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="T5M-WM-bgn" id="vkp-a3-hxX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="415"/>
         </scene>
     </scenes>
 </document>

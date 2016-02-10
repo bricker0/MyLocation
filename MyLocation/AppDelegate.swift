@@ -1,20 +1,26 @@
 //
 //  AppDelegate.swift
 //  MyLocation
-//
+// This is lab 3 for the course TGIS 504 Mobile GIS in the Masters of Geospatial Technology offered at the University of Washington Tacoma
 //  Created by bricker0 on 2/4/16.
 //  Copyright © 2016 bricker0. All rights reserved.
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let locationManager = CLLocationManager()
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application (application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [NSObject:AnyObject]?) -> Bool
+    
+    {
+        locationManager.requestWhenInUseAuthorization()
         // Override point for customization after application launch.
         return true
     }
